@@ -2,9 +2,14 @@
 dependencies: []
 
 galaxy_info:
-  author: defunctzombie
+  author: falco-pub
+  role_name: coreos-bootstrap
+  platforms:
+          - name: GenericLinux
+            versions:
+                    - all
   description: "bootstrap coreos hosts to run ansible"
   license: "MIT"
   min_ansible_version: 1.4
-  categories:
+  galaxy_tags:
     - system
