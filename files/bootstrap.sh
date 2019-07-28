@@ -8,16 +8,17 @@ if [[ -e $HOME/.bootstrapped ]]; then
   exit 0
 fi
 
-PYPY_VERSION=5.1.0
+PYPY_VERSION=7.1.1
+PYPY2_FILENAME="pypy2.7-v${PYPY_VERSION}-linux64"
 
-if [[ -e $HOME/pypy-$PYPY_VERSION-linux64.tar.bz2 ]]; then
-  tar -xjf $HOME/pypy-$PYPY_VERSION-linux64.tar.bz2
-  rm -rf $HOME/pypy-$PYPY_VERSION-linux64.tar.bz2
+if [[ -e $HOME/$PYPY2_FILENAME.tar.bz2 ]]; then
+  tar -xjf $HOME/$PYPY2_FILENAME.tar.bz2
+  rm -rf $HOME/$PYPY2_FILENAME.tar.bz2
 else
-  wget -O - https://bitbucket.org/pypy/pypy/downloads/pypy-$PYPY_VERSION-linux64.tar.bz2 |tar -xjf -
+  wget -O - https://bitbucket.org/pypy/pypy/downloads/$PYPY2_FILENAME.tar.bz2 |tar -xjf -
 fi
 
-mv -n pypy-$PYPY_VERSION-linux64 pypy
+mv -n $PYPY2_FILENAME pypy
 
 ## library fixup
 mkdir -p pypy/lib
