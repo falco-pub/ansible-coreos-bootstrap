@@ -7,7 +7,7 @@ In order to effectively run ansible, the target machine needs to have a python i
 # install
 
 ```
-ansible-galaxy install defunctzombie.coreos-bootstrap
+ansible-galaxy install falco_pub.coreos_bootstrap
 ```
 
 # Configure your project
@@ -33,7 +33,7 @@ Now you can simply add the following to your playbook file and include it in you
 - hosts: coreos
   gather_facts: False
   roles:
-    - defunctzombie.coreos-bootstrap
+    - falco_pub.coreos-bootstrap
 ```
 
 Make sure that `gather_facts` is set to false, otherwise ansible will try to first gather system facts using python which is not yet installed!
