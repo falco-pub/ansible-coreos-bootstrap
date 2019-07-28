@@ -31,7 +31,7 @@ Now you can simply add the following to your playbook file and include it in you
 - hosts: coreos
   gather_facts: False
   roles:
-    - falco_pub.coreos-bootstrap
+    - falco_pub.coreos_bootstrap
 ```
 
 Make sure that `gather_facts` is set to false, otherwise ansible will try to first gather system facts using python which is not yet installed!
